@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>NotionDB test</title>
+
+		<!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
+		<script type="text/javascript" src="scr.js"></script>
+		<!-- <script type="" src="scr.js"></script> -->
+
+	</head>
+	<body>
+		<div>
+			<p>
+				<h3>
+					<br>
+					Form checks ability to externally connect with Notion's<br>
+					database and access it's data.
+				</h3>
+			</p>
+			<hr>
+		</div>
+
+		<div>
+			<form>
+				<p>
+					<label for="tb_dbLink">Database link:</label>
+					<input type="text" id="db_link" name="tb_dbLink" size="80">
+				</p>
+				<p>
+					<label for="tb_dbId">Database ID:</label>
+					<input type="text" id="db_id" name="tb_dbId" size="80" style="margin-left:8px">
+				</p>
+				<input type="button" value="Connect..." onclick="queryDb()" style="margin-left: 333px; width:150px">
+			</form>
+			<hr style="margin-right: 70%">
+		</div>
+	</body>
+</html>
