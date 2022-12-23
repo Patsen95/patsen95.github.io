@@ -1,38 +1,105 @@
 <!DOCTYPE html>
-<html>
-	<head>
-		<title>NotionDB test</title>
+	<html lang="en">
+		<head>
+			<meta charset="utf-8">
 
-		<!-- <link rel="stylesheet" type="text/css" href="styles.css"> -->
-		<script type="text/javascript" src="scr.js"></script>
-		<!-- <script type="" src="scr.js"></script> -->
+			<title>Merry Xmas!</title>
+			<meta name="description" content="HTML5">
+			<meta name="author" content="Patsen95">
 
-	</head>
+			<link rel="shortcut icon" type="image/jpg" href="res/snowy.ico" />
+			<link rel="stylesheet" href="css/styles.css?v=1.0">
+			
+			<style>
+				:root {
+					--cGradient: linear-gradient(
+						45deg,
+						#00b33c,
+						#1ca53b,
+						#39973a,
+						#558839,
+						#717a38,
+						#8e6c37,
+						#aa5e36,
+						#c64f35,
+						#e34134,
+						#ff3333
+					);
+				}
+
+				h1 {
+					text-align: center;	
+					font-family: "Comic Sans MS", "Comic Sans";
+					font-size: 72pt;
+				}
+
+				body {
+					background-image: linear-gradient(to top right, #a3d3ff, #71bbff);
+					background-repeat: no-repeat;
+					background-attachment: fixed;
+				}
+
+				div.ctree {
+					position: relative;
+					width: 400px;
+					height: 500px;
+					display: block;
+					margin-left: auto;
+					margin-right: auto;
+				}
+
+				div.tree {
+					position: absolute;
+					z-index: -1;
+					top: 0;
+					left: 0;
+					right: 0;
+					margin-left: auto;
+					margin-right: auto;
+					width: 100%;
+					height: 100%;
+					background-size: 500%;
+					background-image: var(--cGradient);
+					animation: tree-animation 1s infinite alternate-reverse;
+					clip-path: polygon(50% 0, 30% 25%, 48% 25%, 15% 57%, 45% 57%, 0 100%, 100% 100%, 55% 57%, 85% 57%, 52% 25%, 70% 25%);
+				}
+
+				div.trunk {
+					position: absolute;
+					z-index: -1;
+					top: 100%;
+					left: 0;
+					right: 0;
+					margin-left: auto;
+					margin-right: auto;
+					width: 30%;
+					height: 20%;
+					background-size: 500%;
+					background-color: rgb(46, 13, 13);
+					clip-path: polygon(30% 0, 30% 100%, 70% 100%, 70% 0);
+				}
+
+				@keyframes tree-animation {
+					0% { background-position: left; }
+					100% { background-position: right;}
+				}
+
+			</style>
+
+		</head>
+
 	<body>
+		
 		<div>
 			<p>
-				<h3>
-					<br>
-					Form checks ability to externally connect with Notion's<br>
-					database and access it's data.
-				</h3>
+				<h1>Merry Xmas!</h1>
 			</p>
-			<hr>
 		</div>
 
-		<div>
-			<form>
-				<p>
-					<label for="tb_dbLink">Database link:</label>
-					<input type="text" id="db_link" name="tb_dbLink" size="80">
-				</p>
-				<p>
-					<label for="tb_dbId">Database ID:</label>
-					<input type="text" id="db_id" name="tb_dbId" size="80" style="margin-left:8px">
-				</p>
-				<input type="button" value="Connect..." onclick="queryDb()" style="margin-left: 333px; width:150px">
-			</form>
-			<hr style="margin-right: 70%">
+		<div class="ctree">
+			<div class="tree"></div>
+			<div class="trunk"></div>
 		</div>
+		
 	</body>
 </html>
