@@ -25,6 +25,9 @@
 						#e34134,
 						#ff3333
 					);
+					--textBase: #3e62ff;
+					--textGlow: #ffb703;
+					--treeShadow: #0099ff;
 				}
 
 				h1 {
@@ -34,9 +37,44 @@
 				}
 
 				body {
-					background-image: linear-gradient(to top right, #a3d3ff, #71bbff);
-					background-repeat: no-repeat;
+					background-image: url("res/background.jpg");
 					background-attachment: fixed;
+				}
+
+				.txtContainer {
+					position: relative;
+					width: 100%;
+					min-height: 200px;
+					display: flex;
+					justify-content: center;
+					align-items: center;
+					background-color: transparent;
+				}
+
+				.text span {
+					font-size: 84px;
+					padding: 0 20px;
+					text-transform: uppercase;
+					font-weight: 600;
+					color: var(--textBase);
+					animation: zoomup 3s ease infinite;
+					animation-delay: calc(100ms * var(--i));
+				}
+
+				@keyframes zoomup {
+					0%,
+					100% {
+						color: var(--textBase);
+						filter: blur(0.6px);
+						text-shadow: 0 0 10px var(--textGlow), 0 0 20px var(--textGlow), 0 0 30px var(--textGlow),
+						0 0 40px var(--textGlow), 0 0 50px var(--textGlow), 0 0 60px var(--textGlow);
+					}
+
+					50% {
+						filter: blur(0);
+						color: var(--textBase);
+						text-shadow: none;
+					}
 				}
 
 				div.ctree {
@@ -46,6 +84,7 @@
 					display: block;
 					margin-left: auto;
 					margin-right: auto;
+					filter: drop-shadow(0 15px 30px var(--treeShadow));
 				}
 
 				div.tree {
@@ -90,9 +129,21 @@
 
 	<body>
 		
-		<div>
+		<div class="txtContainer">
 			<p>
-				<h1>Merry Xmas!</h1>
+				<div class="text">
+					<span style="--i:1">M</span>
+					<span style="--i:2">e</span>
+					<span style="--i:3">r</span>
+					<span style="--i:4">r</span>
+					<span style="--i:5">y</span>
+					<span style="--i:6"></span>
+					<span style="--i:7">X</span>
+					<span style="--i:8">m</span>
+					<span style="--i:9">a</span>
+					<span style="--i:10">s</span>
+					<span style="--i:11">!</span>
+				</div>
 			</p>
 		</div>
 
